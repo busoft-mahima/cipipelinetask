@@ -23,8 +23,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
+        working-directory: backend
         run: |
-          docker build -t myapp:${{ github.sha }} ./backend
+          docker build -t myapp:${{ github.sha }} .
 
       - name: Run Tests Inside Container
         run: |
