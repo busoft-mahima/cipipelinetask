@@ -30,17 +30,16 @@ jobs:
       - name: Tag Latest Image
         run: |
           docker tag myapp:${{ github.sha }} \
-          yourdockerhubusername/myapp:latest
+          mahimakumari124/myapp:latest
 
       - name: Tag Commit Image
         run: |
           docker tag myapp:${{ github.sha }} \
-          yourdockerhubusername/myapp:${{ github.sha }}
+          mahimakumari124/myapp:${{ github.sha }}
 
       - name: Push Latest Image
         run: |
-          docker push yourdockerhubusername/myapp:latest
-
+          docker push mahimakumari124/myapp:latest
       - name: Push Commit Tag
         run: |
-          docker push yourdockerhubusername/myapp:${{ github.sha }}
+          docker push mahimakumari124/myapp:${{ github.sha }}
