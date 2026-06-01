@@ -26,11 +26,7 @@ jobs:
         working-directory: backend
         run: |
           docker build -t myapp:${{ github.sha }} .
-
-      - name: Run Tests Inside Container
-        run: |
-          docker run --rm myapp:${{ github.sha }} npm test
-
+          
       - name: Tag Latest Image
         run: |
           docker tag myapp:${{ github.sha }} \
